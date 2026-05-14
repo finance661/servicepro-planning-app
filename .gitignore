@@ -1,0 +1,13 @@
+.next
+.next-servicepro
+.next-servicepro-build
+node_modules
+.env.local
+config/google-sheets.json
+dist
+out
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+Google_Sheet_ID/servicepro-planning-app-2026-6aa6f87b1e73.json
+Google_Sheet_ID/*.json

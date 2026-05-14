@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f7f8fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #172033;
+  background:
+    linear-gradient(180deg, rgba(232, 244, 255, 0.78), rgba(247, 248, 251, 0) 360px),
+    #f7f8fb;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.servicepro-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(186, 230, 253, 0.45), transparent 32rem),
+    linear-gradient(180deg, rgba(232, 244, 255, 0.86), rgba(247, 248, 251, 0) 360px),
+    #f7f8fb;
+}
+
+.servicepro-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+}
+
+.servicepro-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.25rem;
+}
+
+.servicepro-brand {
+  color: #0f766e;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.servicepro-title {
+  margin-top: 0.25rem;
+  color: #020617;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.servicepro-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.08);
+}
+
+.servicepro-filter-card {
+  padding: 1rem;
+}
+
+.servicepro-table-card {
+  overflow: hidden;
+}
+
+.servicepro-form-card {
+  padding: 1rem;
+}
+
+.servicepro-segmented {
+  height: 2.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 0.25rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.servicepro-settings-button,
+.servicepro-secondary-button,
+.servicepro-icon-button {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #334155;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.servicepro-settings-button:hover,
+.servicepro-secondary-button:hover,
+.servicepro-icon-button:hover {
+  background: #f8fafc;
+}
+
+.servicepro-primary-button {
+  border-radius: 0.5rem;
+  background: #0f766e;
+  color: #fff;
+  font-weight: 700;
+  transition: background-color 150ms ease;
+}
+
+.servicepro-primary-button:hover {
+  background: #115e59;
+}
+
+.servicepro-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.servicepro-modal {
+  width: 100%;
+  max-width: 42rem;
+  max-height: 92vh;
+  margin: 0 auto;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem 1rem 0 0;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.2);
+}
+
+.servicepro-modal-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .servicepro-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .servicepro-modal-backdrop {
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .servicepro-modal {
+    border-radius: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .servicepro-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@layer components {
+  .input {
+    @apply h-11 rounded-lg border border-slate-200 bg-white px-3 text-slate-950 shadow-sm outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-100;
+  }
+
+  .icon-button {
+    @apply flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50;
+  }
+
+  .primary-button {
+    @apply flex h-11 items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800;
+  }
+
+  .secondary-button {
+    @apply flex h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50;
+  }
+}
