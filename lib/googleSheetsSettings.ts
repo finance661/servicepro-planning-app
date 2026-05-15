@@ -13,3 +13,7 @@ export function saveGoogleSheetsConfig() {
   // Uitgeschakeld op Vercel - gebruik Environment Variables
   return { success: false, message: 'Gebruik Vercel Environment Variables' };
 }
+
+export function getGoogleSheetsSettings() {
+  return getGoogleSheetsConfig();
+}
