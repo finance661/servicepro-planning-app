@@ -35,7 +35,7 @@ export function GoogleSheetsSettingsModal({
 }) {
   const [form, setForm] = useState<SettingsForm>({
     clientEmail: "",
-    privateKey: settings?.privateKey || "",
+    privateKey: "",
     sheetId: DEFAULT_SHEET_ID
   });
   const [saving, setSaving] = useState(false);
@@ -48,7 +48,7 @@ export function GoogleSheetsSettingsModal({
 
     setForm({
       clientEmail: settings?.clientEmail || DEFAULT_SERVICE_ACCOUNT_EMAIL,
-      privateKey: settings?.privateKey || "",
+      privateKey: "",
       sheetId: settings?.sheetId || DEFAULT_SHEET_ID
     });
     setMessage("");
