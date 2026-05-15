@@ -1,35 +1,19 @@
-import { NextRequest, NextResponse } from "next/server";
-import { getPublicGoogleSheetsSettings, saveGoogleSheetsSettings } from "@/lib/googleSheetsSettings";
-import { jsonError } from "@/lib/apiResponse";
+import { NextResponse } from 'next/server';
 
-export const dynamic = "force-dynamic";
-export const runtime = "nodejs";
-
-export async function GET() {
-  try {
-    const settings = await getPublicGoogleSheetsSettings();
-    return NextResponse.json(settings);
-  } catch (error) {
-    return jsonError(error);
-  }
+export async function POST() {
+  return NextResponse.json({
+    success: false,
+    message: 'Configuratie wordt beheerd via Vercel Environment Variables.'
+  });
 }
 
-export async function POST(request: NextRequest) {
-  try {
-    const body = (await request.json()) as {
-      clientEmail?: string;
-      privateKey?: string;
-      sheetId?: string;
-    };
-
-    const settings = await saveGoogleSheetsSettings({
-      clientEmail: body.clientEmail ?? "",
-      privateKey: body.privateKey,
-      sheetId: body.sheetId
-    });
-
-    return NextResponse.json(settings);
-  } catch (error) {
-    return jsonError(error, 400);
-  }
+export async function GET() {
+  return NextResponse.json({
+    success: true,
+    data: {
+      sheetId: process.env.GOOGLE_SHEET_ID || '',
+      serviceAccountEmail: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || '',
+      hasPrivateKey: !!process.env.GOOGLE_PRIVATE_KEY,
+    }
+  });
 }
