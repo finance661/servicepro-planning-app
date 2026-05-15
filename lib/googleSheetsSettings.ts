@@ -17,3 +17,16 @@ export function saveGoogleSheetsConfig() {
 export function getGoogleSheetsSettings() {
   return getGoogleSheetsConfig();
 }
+
+export const DEFAULT_GOOGLE_SHEET_ID = process.env.GOOGLE_SHEET_ID || '';
+
+export type GoogleSheetsSettings = {
+  privateKey: string;
+  clientEmail: string;
+  sheetId: string;
+  sheetName: string;
+};
+
+export function requireGoogleSheetsSettings(): GoogleSheetsSettings {
+  return getGoogleSheetsConfig();
+}
