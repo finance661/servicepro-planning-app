@@ -1,0 +1,37 @@
+schema_version: 1
+project:
+  name: servicepro-planning-app
+  repository: finance661/servicepro-planning-app
+  default_branch: main
+
+status: DISCOVERY
+updated_at: "2026-09-27T18:51:00+02:00"
+
+source:
+  system: GitHub
+  repository: finance661/servicepro-planning-app
+  branch: main
+  last_verified_commit: null
+
+workspace:
+  system: Google Drive
+  reference: private_external_reference
+  repository_contains_private_link: false
+
+execution:
+  system: Cloudflare
+  target: unconfigured
+  production_url: null
+  deployed_commit: null
+  last_result: not_configured
+
+current:
+  goal: Establish GitHub as source of truth, Drive as workspace, and Cloudflare as execution.
+  next_action: Inspect the existing application and current hosting, then declare the Cloudflare target.
+  blockers: []
+
+history:
+  - at: "2026-09-27T18:51:00+02:00"
+    from: INBOX
+    to: DISCOVERY
+    note: Added the central agent instructions and project state machine.
